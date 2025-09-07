@@ -83,9 +83,6 @@ function renderPlants(plantsToShow) {
 
   <button class="btn btn-primary bg-green-600 w-full border-none rounded-2xl ">Add to Cart</button>
 `;
-
-
-
         plantList.appendChild(card);
     });
 }
