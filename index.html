@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body>
+<body class="bg-[#F0FDF4]">
     <nav class="bg-[#15803D]">
         <div class="max-w-[1690px] mx-auto px-4">
             <div class="navbar shadow-sm">
@@ -45,9 +45,9 @@
 
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 text-white ">
-                        <li><a>About</a></li>
-                        <li><a>Gallery</a></li>
-                        <li><a>Plant a Tree</a></li>
+                        <li><a class="hover:bg-[#FACC15] ">About</a></li>
+                        <li><a class="hover:bg-[#FACC15] ">Gallery</a></li>
+                        <li><a class="hover:bg-[#FACC15] ">Plant a Tree</a></li>
                     </ul>
                 </div>
 
@@ -92,7 +92,32 @@
         </div>
     </section>
 
+    <!-- Choose Your Trees -->
+    <h2 class="text-2xl font-bold mb-3 text-center mt-8">Choose Your Trees</h2>
+    <section class=" max-w-[1690px] mx-auto px-4 flex gap-5 p-5 ">
 
+        <!-- Categories (Left) -->
+        <div class="w-1/6">
+            <h2 class="text-lg font-bold mb-3">Categories</h2>
+            <ul id="category-list" class="space-y-2"></ul>
+        </div>
+
+        <!-- Cart Section (Center) -->
+        <div class="w-4/6">
+            <div id="plant-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5"></div>
+        </div>
+
+        <!-- Cart History (Right) -->
+        <div class="w-1/6">
+            <h2 class="text-lg font-bold mb-3">History</h2>
+            <ul id="history-list" class="space-y-2"></ul>
+        </div>
+    </section>
+    <!-- About to Campaign -->
+
+
+
+    <script src="./script/index.js"></script>
 </body>
 
 </html>
