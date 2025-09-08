@@ -1,30 +1,21 @@
-// ===============================
-// Cart Functionality
-// ===============================
+// Cart Functionality 
 
-// Select Elements
 const historyList = document.getElementById("history-list");
 const totalPriceElement = document.getElementById("total-price");
 
-// Cart Array
+//  Array
 let cart = [];
 
-// ===============================
-// 1. Add to Cart
-// ===============================
+// Add to Cart
 function addToCart(plant) {
-    // Add plant to cart array
     cart.push(plant);
-
-    // Render the cart UI
     renderCart();
 }
 
-// ===============================
-// 2. Render Cart List & Total Price
-// ===============================
+// Render Cart List & Total Price
+
 function renderCart() {
-    historyList.innerHTML = ""; // Clear previous cart items
+    historyList.innerHTML = "";
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -52,19 +43,15 @@ function renderCart() {
     totalPriceElement.textContent = `৳${total}`;
 }
 
-// ===============================
-// 3. Remove from Cart
-// ===============================
+// Remove from Cart
+
 function removeFromCart(index) {
-    cart.splice(index, 1); // Remove the item at this index
-    renderCart(); // Update the cart UI
+    cart.splice(index, 1);
+    renderCart(); //
 }
 
-// ===============================
-// 4. Listen to "Add to Cart" button clicks
-// ===============================
+// Listen to "Add to Cart" button clicks
 
-// This will run after plants are rendered
 document.addEventListener("click", (e) => {
     if (e.target && e.target.classList.contains("add-to-cart")) {
         console.log("add to cart button clicked")
