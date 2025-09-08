@@ -94,20 +94,27 @@ function openTreeModal(id) {
         .then(res => res.json())
         .then(data => {
             if (!data.plants) return;
+
             const plant = data.plants;
 
-            // Add text labels
+            // Update modal content
             document.getElementById("modalName").textContent = plant.name;
             document.getElementById("modalImage").src = plant.image;
-            document.getElementById("modalCategory").textContent = `Category: ${plant.category}`;
-            document.getElementById("modalPrice").textContent = `Price: ৳${plant.price}`;
-            document.getElementById("modalDescription").textContent = `Description: ${plant.description}`;
+            document.getElementById("modalCategory").textContent = plant.category;
+            document.getElementById("modalPrice").textContent = `৳${plant.price}`;
+            document.getElementById("modalDescription").textContent = plant.description;
 
+            // Show modal
+            const treeModal = document.getElementById("treeModal");
             treeModal.classList.remove("hidden");
-            treeModal.classList.add("flex");
         })
         .catch(err => console.error("Error fetching plant details:", err));
 }
+
+// Close modal
+document.getElementById("closeModal").addEventListener("click", () => {
+    document.getElementById("treeModal").classList.add("hidden");
+});
 
 
 // ===============================

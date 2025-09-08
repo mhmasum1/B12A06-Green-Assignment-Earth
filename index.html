@@ -134,28 +134,37 @@
             </div>
         </div>
     </section>
-    <!-- Modal Background -->
-    <div id="treeModal" class="hidden fixed inset-0 bg-white/95 shadow-lg items-center justify-center z-50">
-
-        <div class="relative w-96 bg-white rounded-lg shadow p-6">
+    <!-- Tree Modal -->
+    <div id="treeModal"
+        class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-96 bg-white shadow-lg rounded-lg border border-gray-200">
+        <div class="p-4">
             <!-- Modal Title -->
-            <h2 id="modalName" class="text-xl font-bold mb-3 text-green-800"></h2>
+            <h2 id="modalName" class="text-xl font-semibold text-green-700 mb-3"></h2>
 
             <!-- Modal Image -->
-            <img id="modalImage" src="" alt="Tree Image" class="w-full h-48 object-cover rounded mb-4">
+            <img id="modalImage" src="" alt="" class="w-full h-48 object-cover rounded mb-4">
 
-            <!-- Modal Details -->
-            <p id="modalCategory" class="text-green-700 mb-2"></p>
-            <p id="modalPrice" class="font-semibold text-green-600 mb-2"></p>
-            <p id="modalDescription" class="text-gray-700 text-sm"></p>
+            <!-- Category -->
+            <p class="text-sm text-gray-600 mb-1"><span class="font-bold">Category:</span> <span
+                    id="modalCategory"></span></p>
+
+            <!-- Price -->
+            <p class="text-sm text-gray-600 mb-1"><span class="font-bold">Price:</span> <span id="modalPrice"></span>
+            </p>
+
+            <!-- Description -->
+            <p class="text-sm text-gray-600 mb-4"><span class="font-bold">Description:</span> <span
+                    id="modalDescription"></span></p>
 
             <!-- Close Button -->
-            <button id="closeModal"
-                class="absolute bottom-3 right-3 bg-green-600 text-white px-3 py-1 rounded hover:bg-green-800">
-                Close
-            </button>
+            <div class="flex justify-end">
+                <button id="closeModal"
+                    class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Close</button>
+            </div>
         </div>
     </div>
+
+
     <section class="bg-[#166534] pt-8 pb-8 ">
         <h2 class="text-2xl font-bold mb-6 text-center text-white mt-8">Plant a Tree Today</h2>
         <section class="max-w-md mx-auto p-6 bg-gray-100 rounded-lg shadow">
