@@ -29,7 +29,7 @@ function renderCategories(plants) {
     const liAll = document.createElement("li");
     liAll.textContent = "All Trees";
     liAll.className =
-        "px-3 py-1 cursor-pointer hover:bg-green-600 font-semibold";
+        "px-3 py-1 cursor-pointer hover:bg-green-600 hover:text-white font-semibold";
     liAll.addEventListener("click", () => renderPlants(plants));
     categoryList.appendChild(liAll);
 
@@ -37,7 +37,7 @@ function renderCategories(plants) {
     categories.forEach(cat => {
         const li = document.createElement("li");
         li.textContent = cat;
-        li.className = "px-3 py-1 cursor-pointer hover:bg-green-600";
+        li.className = "px-3 py-1 cursor-pointer hover:bg-green-600 hover:text-white";
         li.addEventListener("click", () => {
             const filtered = plants.filter(p => p.category === cat);
             renderPlants(filtered);
