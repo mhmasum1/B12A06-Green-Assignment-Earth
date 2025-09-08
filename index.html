@@ -102,9 +102,15 @@
 
         <!-- Cart History (Right) -->
         <div class="w-1/6">
-            <h2 class="text-lg font-bold mb-3">History</h2>
+            <h2 class="text-lg font-bold mb-3">Your Cart</h2>
             <ul id="history-list" class="space-y-2"></ul>
+
+            <!-- Total Price -->
+            <div class="mt-4 border-t pt-2">
+                <p class="text-sm text-right font-semibold">Total: <span id="total-price">৳0</span></p>
+            </div>
         </div>
+
     </section>
 
     <!-- About Campaign -->
@@ -128,31 +134,29 @@
             </div>
         </div>
     </section>
+    <!-- Modal Background -->
+    <div id="treeModal" class="hidden fixed inset-0 bg-white/95 shadow-lg items-center justify-center z-50">
 
-    <!-- Modal -->
-    <div id="treeModal"
-        class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-96 bg-white rounded-lg shadow-lg p-6 flex flex-col">
+        <div class="relative w-96 bg-white rounded-lg shadow p-6">
+            <!-- Modal Title -->
+            <h2 id="modalName" class="text-xl font-bold mb-3 text-green-800"></h2>
 
-        <!-- Title Top Left -->
-        <h2 id="modalName" class="text-xl font-bold mb-4 text-left"></h2>
+            <!-- Modal Image -->
+            <img id="modalImage" src="" alt="Tree Image" class="w-full h-48 object-cover rounded mb-4">
 
-        <!-- Image -->
-        <img id="modalImage" src="" alt="Tree Image" class="w-full h-48 object-cover rounded mb-4">
+            <!-- Modal Details -->
+            <p id="modalCategory" class="text-green-700 mb-2"></p>
+            <p id="modalPrice" class="font-semibold text-green-600 mb-2"></p>
+            <p id="modalDescription" class="text-gray-700 text-sm"></p>
 
-        <!-- Category -->
-        <p id="modalCategory" class="text-sm font-medium mb-2"></p>
-
-        <!-- Price -->
-        <p id="modalPrice" class="text-lg font-bold mb-2"></p>
-
-        <!-- Description -->
-        <p id="modalDescription" class=" text-gray-500 mb-4"></p>
-
-        <!-- Close Button Right Bottom -->
-        <button id="closeModal" class="self-end px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
+            <!-- Close Button -->
+            <button id="closeModal"
+                class="absolute bottom-3 right-3 bg-green-600 text-white px-3 py-1 rounded hover:bg-green-800">
+                Close
+            </button>
+        </div>
     </div>
+
 
 
 
@@ -164,6 +168,7 @@
     </footer>
 
     <script src="./script/index.js"></script>
+    <script src="./script/cart.js"></script>
 </body>
 
 </html>

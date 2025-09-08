@@ -59,19 +59,26 @@ function renderPlants(plantsToShow) {
 
         // ORIGINAL DESIGN (kept as you provided)
         card.innerHTML = `
-      <img src="${p.image}" alt="${p.name}" class="w-full h-32 object-cover rounded mb-2">
-      <h3 class="font-semibold text-left w-full mb-1 text-green-700 cursor-pointer hover:underline" data-id="${p.id}">
-        ${p.name}
-      </h3>
-      <p class="text-sm text-gray-600 text-left mb-2">${p.description}</p>
-      <div class="flex justify-between items-center w-full my-4">
-        <button class="px-1 py-1 text-sm text-green-600 border border-green-600 rounded-2xl bg-white hover:bg-green-600 hover:text-white">
-          ${p.category}
-        </button>
-        <p class="font-bold text-green-600 m-0">৳${p.price}</p>
-      </div>
-      <button class="btn btn-primary bg-green-600 w-full border-none rounded-2xl">Add to Cart</button>
-    `;
+  <img src="${p.image}" alt="${p.name}" class="w-full h-32 object-cover rounded mb-2">
+  <h3 class="font-semibold text-left w-full mb-1 text-green-700 cursor-pointer hover:underline" data-id="${p.id}">
+    ${p.name}
+  </h3>
+  <p class="text-sm text-gray-600 text-left mb-2">${p.description}</p>
+  <div class="flex justify-between items-center w-full my-4">
+    <button class="px-1 py-1 text-sm text-green-600 border border-green-600 rounded-2xl bg-white hover:bg-green-600 hover:text-white">
+      ${p.category}
+    </button>
+    <p class="font-bold text-green-600 m-0">৳${p.price}</p>
+  </div>
+  <button 
+    class="btn btn-primary bg-green-600 w-full border-none rounded-2xl add-to-cart"
+    data-id="${p.id}" 
+    data-name="${p.name}" 
+    data-price="${p.price}">
+    Add to Cart
+  </button>
+`;
+
 
         // Tree Name click => Open modal
         const treeName = card.querySelector("h3");
