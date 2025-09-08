@@ -1,5 +1,7 @@
-Project Title:Green Earth
-Live Demo: 
+# Project Title:Green Earth
+# Live Demo: https://mhmasum1.github.io/B12A06-Green-Assignment-Earth/
+# Github Repository: https://github.com/mhmasum1/B12A06-Green-Assignment-Earth
+
 
 **Functionalities**
 Category Loading Load Tree Categories dynamically on the left side.
@@ -22,7 +24,7 @@ Highlight active category button when selected.
 #################################################
 
 
-Answer all the questions:
+# Answer all the questions:
 1) What is the difference between var, let, and const?
   var is function-scoped, can be re-declared, and is hoisted.
   let is block-scoped, reassignable, but not re-declarable in the same scope.
