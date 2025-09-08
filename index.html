@@ -88,28 +88,28 @@
 
     <!-- Choose Your Trees -->
     <h2 class="text-2xl font-bold text-center mt-8">Choose Your Trees</h2>
-    <section class="max-w-[1690px] mx-auto px-4 flex gap-5 p-5">
+    <section class="max-w-[1690px] mx-auto px-4 flex flex-col lg:flex-row gap-5 p-5">
+
         <!-- Categories (Left) -->
-        <div class="w-1/6">
+        <div class="w-full lg:w-1/6">
             <h2 class="text-lg font-bold mb-3">Categories</h2>
             <ul id="category-list" class="space-y-2"></ul>
         </div>
 
         <!-- Loading Spinner -->
-        <div id="loadingSpinner" class="hidden text-center py-10">
+        <div id="loadingSpinner" class="hidden text-center py-10 w-full">
             <div class="w-10 h-10 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto">
             </div>
             <p class="text-green-600 mt-2">Loading...</p>
         </div>
 
-
         <!-- Plant Cards (Center) -->
-        <div class="w-4/6">
-            <div id="plant-list" class="grid grid-cols-1  lg:grid-cols-3 gap-5"></div>
+        <div class="w-full lg:w-4/6">
+            <div id="plant-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         </div>
 
         <!-- Cart History (Right) -->
-        <div class="w-1/6">
+        <div class="w-full lg:w-1/6 mt-6 lg:mt-0">
             <h2 class="text-lg font-bold mb-3">Your Cart</h2>
             <ul id="history-list" class="space-y-2"></ul>
 
@@ -120,6 +120,7 @@
         </div>
 
     </section>
+
 
     <!-- About Campaign -->
     <h2 class="text-2xl font-bold text-center mt-8">About the Campaign</h2>
