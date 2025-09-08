@@ -3,6 +3,16 @@ const categoryList = document.getElementById("category-list");
 const plantList = document.getElementById("plant-list");
 const treeModal = document.getElementById("treeModal");
 const closeModalBtn = document.getElementById("closeModal");
+const loadingSpinner = document.getElementById("loadingSpinner");
+
+function showSpinner() {
+    loadingSpinner.classList.remove("hidden");
+}
+
+function hideSpinner() {
+    loadingSpinner.classList.add("hidden");
+}
+
 
 // API Base URL
 const API_URL = "https://openapi.programming-hero.com/api/plants";
@@ -10,12 +20,15 @@ const API_URL = "https://openapi.programming-hero.com/api/plants";
 // ===============================
 // 1. Fetch All Plants on Page Load
 // ===============================
+showSpinner(); // Fetch er age spinner show
+
 fetch(API_URL)
     .then(res => res.json())
     .then(data => {
         const plants = data.plants;
         renderCategories(plants);
         renderPlants(plants); // Show all plants initially
+        hideSpinner(); // Data ashar por spinner hide
     })
     .catch(err => console.error("Error fetching plants:", err));
 
@@ -24,27 +37,45 @@ fetch(API_URL)
 // ===============================
 function renderCategories(plants) {
     const categories = [...new Set(plants.map(p => p.category))];
+    categoryList.innerHTML = ""; // Clear previous categories
 
-    // 'All' button
+    // 'All Trees' button
     const liAll = document.createElement("li");
     liAll.textContent = "All Trees";
     liAll.className =
-        "px-3 py-1 cursor-pointer hover:bg-green-600 hover:text-white font-semibold";
-    liAll.addEventListener("click", () => renderPlants(plants));
+        "px-3 py-1 cursor-pointer  hover:bg-green-600 hover:text-white font-semibold";
+
+    // Default active
+    liAll.classList.add("bg-green-600", "text-white");
+
+    liAll.addEventListener("click", () => {
+        setActiveCategory(liAll);
+        renderPlants(plants);
+    });
     categoryList.appendChild(liAll);
 
     // Dynamic categories
     categories.forEach(cat => {
         const li = document.createElement("li");
         li.textContent = cat;
-        li.className = "px-3 py-1 cursor-pointer hover:bg-green-600 hover:text-white";
+        li.className =
+            "px-3 py-1 cursor-pointer  hover:bg-green-600 hover:text-white";
         li.addEventListener("click", () => {
+            setActiveCategory(li);
             const filtered = plants.filter(p => p.category === cat);
             renderPlants(filtered);
         });
         categoryList.appendChild(li);
     });
 }
+
+// Helper function to manage active state
+function setActiveCategory(activeLi) {
+    const allLi = categoryList.querySelectorAll("li");
+    allLi.forEach(li => li.classList.remove("bg-green-600", "text-white"));
+    activeLi.classList.add("bg-green-600", "text-white");
+}
+
 
 // ===============================
 // 3. Render Plant Cards (Unchanged Design)
